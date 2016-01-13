@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://developer.globelabs.com.ph/oauth/access_token?app_id=some_app_id&app_secret=some_app_secret&code=jpCqkLxrupM7kjSMaL5EUaLqjrSrxR96SGB5a6t5AMMLUoqkrACLkEn6UgEj84sRazadC89RELuoboGqSRnGnRCx4beEIKBKKMsrXzp9sBoXeEfbjEoau9aRyeHzacXgpkacR65HnqEXnue7XLXf9bzeqsjoKAesAob4BI7jGzrCMaoedSMXR6zuxBzMBCbzjX6seqEEoUG4k69CApMg9UAR5Bbt79R8GSRgq4RSGzLg9Uxo7aKSd8LgjuBLRe4C
+    body:
+      encoding: US-ASCII
+      string: app_id=some_app_id&app_secret=some_app_secret&code=jpCqkLxrupM7kjSMaL5EUaLqjrSrxR96SGB5a6t5AMMLUoqkrACLkEn6UgEj84sRazadC89RELuoboGqSRnGnRCx4beEIKBKKMsrXzp9sBoXeEfbjEoau9aRyeHzacXgpkacR65HnqEXnue7XLXf9bzeqsjoKAesAob4BI7jGzrCMaoedSMXR6zuxBzMBCbzjX6seqEEoUG4k69CApMg9UAR5Bbt79R8GSRgq4RSGzLg9Uxo7aKSd8LgjuBLRe4C
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Jan 2016 11:18:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - '"013a713a68bae54dfb8b20348a3aed65"'
+      Server:
+      - nginx/1.8.0
+      Status:
+      - 200 OK
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - b9fbda49d47993df9dae4de73cb3194f
+      X-Runtime:
+      - '0.119589'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, PATCH, DELETE, OPTIONS, HEAD
+      Runscope-Message-Id:
+      - 31a98a1a-9aab-401c-8003-162c9744c209
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"Oellvv1vop5w4HFQOt9JgqsErBAGGdvtaamqknrSb9k","subscriber_number":"9277782300"}'
+    http_version:
+  recorded_at: Wed, 13 Jan 2016 11:18:13 GMT
+recorded_with: VCR 3.0.1
