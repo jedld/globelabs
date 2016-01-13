@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/jedld/globelabs/tree/master.svg?style=svg)](https://circleci.com/gh/jedld/globelabs/tree/master)
+
 # Globelabs
 The unofficial ruby gem that does everything you need to do with the globelabs API.
 
