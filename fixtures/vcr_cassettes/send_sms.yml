@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21583779/requests?access_token=tX1pz34Jbyg-oIb417dMYrYMuFkJ-6GskFo8iDEX1gk
+    body:
+      encoding: US-ASCII
+      string: address=9277782300&message=Hello+World%21
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 18 Jan 2016 04:55:04 GMT
+      Server:
+      - nginx/1.1.19
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '704'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "outboundSMSMessageRequest": {
+            "address": "9277782300",
+            "deliveryInfoList": {
+              "deliveryInfo": [],
+              "resourceURL": "https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21583779/requests?access_token=tX1pz34Jbyg-oIb417dMYrYMuFkJ-6GskFo8iDEX1gk"
+            },
+            "senderAddress": "21583779",
+            "outboundSMSTextMessage": {
+              "message": "Hello World!"
+            },
+            "receiptRequest": {
+              "notifyURL": "http://7e597f85.ngrok.com/callbacks/globe/action_callback",
+              "callbackData": null,
+              "senderName": null
+            },
+            "resourceURL": "https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/21583779/requests?access_token=tX1pz34Jbyg-oIb417dMYrYMuFkJ-6GskFo8iDEX1gk"
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 18 Jan 2016 04:54:58 GMT
+recorded_with: VCR 3.0.1
