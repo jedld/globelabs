@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Globelabs::Client do
 
   before do
-    @globe_client = Globelabs::Client.new('some_app_id','some_app_secret')
+    @globe_client = Globelabs::Client.new('some_app_id', 'some_app_secret')
   end
   it 'has a version number' do
     expect(Globelabs::VERSION).not_to be nil
@@ -18,12 +18,20 @@ describe Globelabs::Client do
   describe "SMS" do
     before do
       @globe_client.access_token = 'tX1pz34Jbyg-oIb417dMYrYMuFkJ-6GskFo8iDEX1gk'
-      @sms = @globe_client.sms('21583779')
+      @sms = @globe_client.sms('21580000')
     end
 
     it 'Sends an sms' do
       VCR.use_cassette("send_sms") do
-        @sms.send_sms('9277782300', 'Hello World!')
+        response = @sms.send_sms('9277780000', 'Hello World!')
+        expect(response['outboundSMSMessageRequest']['address']).to eq('9277780000')
+      end
+    end
+
+    it 'Sends an sms using the direct API' do
+      VCR.use_cassette('send_sms_direct') do
+        response = @sms.send_sms_direct('some_pass_phrase', '9277780000', "Hello World!")
+        expect(response['outboundSMSMessageRequest']['address']).to eq('9277780000')
       end
     end
   end
