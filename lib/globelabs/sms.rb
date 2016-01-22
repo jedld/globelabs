@@ -4,6 +4,13 @@ require "json"
 
 module Globelabs
   class Sms
+    class RequestError < Exception
+      attr_accessor :message
+      def initialize(message)
+        @message = message
+      end
+    end
+
     ENDPOINT_SMS = "https://devapi.globelabs.com.ph/smsmessaging/v1/"
 
     attr_accessor :access_token, :sender_shortcode, :passphrase
@@ -28,7 +35,7 @@ module Globelabs
                   }.reject { |_k, v| v.nil? }
       post.set_form_data(form_data)
       response = http.request(post)
-      JSON.parse(response.body)
+      JSON.parse(response.body).tap { |r| raise RequestError.new(r["error"]) if r["error"] }
     end
 
     # Sends an sms
@@ -40,7 +47,7 @@ module Globelabs
       form_data = { address: address, message: message, client_correlator: client_correlator }.reject { |_k, v| v.nil? }
       post.set_form_data(form_data)
       response = http.request(post)
-      JSON.parse(response.body)
+      JSON.parse(response.body).tap { |r| raise RequestError.new(r["error"]) if r["error"] }
     end
   end
 end

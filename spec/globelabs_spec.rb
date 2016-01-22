@@ -35,5 +35,13 @@ describe Globelabs::Client do
         expect(response['outboundSMSMessageRequest']['address']).to eq('9277780000')
       end
     end
+
+    context "Handle variious errors" do
+      it "handles invalid credentials" do
+        VCR.use_cassette('globe_invalid_credentials') do
+          expect { @sms.send_sms_direct('9277782300', "Hello World!") }.to raise_exception Globelabs::Sms::RequestError
+        end
+      end
+    end
   end
 end
