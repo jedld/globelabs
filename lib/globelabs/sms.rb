@@ -4,7 +4,7 @@ require "json"
 
 module Globelabs
   class Sms
-    class RequestError < Exception
+    class RequestError < StandardError
       attr_accessor :message
       def initialize(message)
         @message = message
