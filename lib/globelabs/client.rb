@@ -4,7 +4,7 @@ require "json"
 
 module Globelabs
   class Client
-    attr_accessor :subscriber_number, :access_token, :app_id, :app_secret
+    attr_accessor :subscriber_number, :access_token, :app_id, :app_secret, :passphrase
 
     ENDPOINT_OAUTH = "https://developer.globelabs.com.ph/oauth/"
 
@@ -32,7 +32,7 @@ module Globelabs
 
     def sms(sender_shortcode = nil)
       raise "access_token is required" unless @access_token
-      Globelabs::Sms.new(self, @access_token, sender_shortcode)
+      Globelabs::Sms.new(self, @access_token, sender_shortcode, @passphrase)
     end
 
   end
