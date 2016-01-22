@@ -8,8 +8,13 @@ module Globelabs
 
     ENDPOINT_OAUTH = "https://developer.globelabs.com.ph/oauth/"
 
-    def initialize(app_id, app_secret, access_token = nil)
-      @app_id, @app_secret, @access_token = app_id, app_secret, access_token
+    # Creates an instance of a globe client.
+    #
+    # Options:
+    # => access_token - Access token if available
+    # => passphrase - The passphrase if provided
+    def initialize(app_id, app_secret, options = {})
+      @app_id, @app_secret, @access_token, @passphrase = app_id, app_secret, options[:access_token], options[:passphrase]
     end
 
     def access_token(code)
