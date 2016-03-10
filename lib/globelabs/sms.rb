@@ -11,7 +11,7 @@ module Globelabs
       end
     end
 
-    ENDPOINT_SMS = "https://devapi.globelabs.com.ph/smsmessaging/v1/"
+    ENDPOINT_SMS = "https://devapi-globelabs-com-ph-nge7vq7xgm12.runscope.net/smsmessaging/v1/"
 
     attr_accessor :access_token, :sender_shortcode, :passphrase
 
